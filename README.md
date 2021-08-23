@@ -1,4 +1,4 @@
-# eshop
+# Shocase
 
 A new Flutter application.
 
