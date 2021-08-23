@@ -1,5 +1,5 @@
-import 'package:eshop/Helper/Session.dart';
-import 'package:eshop/Review_Preview.dart';
+import 'package:app/Helper/Session.dart';
+import 'package:app/Review_Preview.dart';
 import 'package:flutter/material.dart';
 
 import 'Model/Section_Model.dart';

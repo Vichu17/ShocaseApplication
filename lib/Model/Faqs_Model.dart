@@ -1,4 +1,4 @@
-import 'package:eshop/Helper/String.dart';
+import 'package:app/Helper/String.dart';
 
 class FaqsModel {
   String id, question,answer,status;

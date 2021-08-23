@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:eshop/Intro_Slider.dart';
+import 'package:app/Intro_Slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

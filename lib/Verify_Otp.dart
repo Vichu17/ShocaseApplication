@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:eshop/Helper/Color.dart';
-import 'package:eshop/Set_Password.dart';
+import 'package:app/Helper/Color.dart';
+import 'package:app/Set_Password.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

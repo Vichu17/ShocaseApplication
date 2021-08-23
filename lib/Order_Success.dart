@@ -1,5 +1,5 @@
-import 'package:eshop/Helper/Color.dart';
-import 'package:eshop/Helper/Session.dart';
+import 'package:app/Helper/Color.dart';
+import 'package:app/Helper/Session.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

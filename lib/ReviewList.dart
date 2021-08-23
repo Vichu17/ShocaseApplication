@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:eshop/Helper/Color.dart';
-import 'package:eshop/Helper/Constant.dart';
-import 'package:eshop/Helper/Session.dart';
-import 'package:eshop/Helper/String.dart';
+import 'package:app/Helper/Color.dart';
+import 'package:app/Helper/Constant.dart';
+import 'package:app/Helper/Session.dart';
+import 'package:app/Helper/String.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

@@ -1,5 +1,6 @@
-import 'package:eshop/Helper/String.dart';
+import 'package:app/Helper/String.dart';
 import 'package:flutter/material.dart';
+
 
 class colors {
   colors._();
@@ -20,25 +21,27 @@ class colors {
     },
   );
 
-  static const Color primary = Color(0xffFE7E7B);
-  static const Color secondary = Color(0xffFDCD96);
+  // static const Color primary = Color(0xFF0e2149);
+  static const Color primary = Color(0xff202844);
+  // static const Color secondary = Color(0xFF0e2149);
+  static const Color secondary = Color(0xffFFFFFF);
 
-  static Color get fontColor => ISDARK == "true" ? secondary : const Color(0xff4543C1);
+  static Color get fontColor => ISDARK == "true" ? secondary : const Color(0xff202844);
   static const Color grad1Color = Color(0xffFFBD69);
   static const Color grad2Color = Color(0xffFF6363);
-  static const Color lightWhite2 = Color(0xffEEF2F3);
+  static const Color lightWhite2 = Color(0xFF0e2149);
 
   static const Color pink = Color(0xffd4001d);
   static const Color red = Colors.red;
 
   static Color get lightBlack =>
-      ISDARK == "true" ? whiteTemp : const Color(0xff52575C);
+      ISDARK == "true" ? whiteTemp : const Color(0xFF0e2149);
 
   static Color get lightBlack2 =>
       ISDARK == "true" ? white70 : const Color(0xff999999);
 
   static Color get lightWhite =>
-      ISDARK == "true" ? darkColor : const Color(0xffEEF2F9);
+      ISDARK == "true" ? darkColor : const Color(0xffFFFFFF);
 
   static const Color darkColor = Color(0xff202844);
   static const Color darkColor2 = Color(0xff273152);

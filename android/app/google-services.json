@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "365058967814",
-    "firebase_url": "https://eshop-2210d.firebaseio.com",
-    "project_id": "eshop-2210d",
-    "storage_bucket": "eshop-2210d.appspot.com"
+    "project_number": "556776541424",
+    "project_id": "shocasenew",
+    "storage_bucket": "shocasenew.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:365058967814:android:aaa2c8582fb6a9269a7687",
+        "mobilesdk_app_id": "1:556776541424:android:1c9bf4637c9ebe3d368635",
         "android_client_info": {
-          "package_name": "com.wrteam.eshop"
+          "package_name": "com.shocase.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "365058967814-d7obt28vb93aka20tlds8grg79v88uqa.apps.googleusercontent.com",
+          "client_id": "556776541424-nfi9qqentvu10s1bprm5r5vpohsb6hne.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyASvoiAu2X2-C-uMSKChK2UD7LDuXh5aEs"
+          "current_key": "AIzaSyCnSFHfPAcl7IWc3c_2aq2EZ9Qe444kxCg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "365058967814-d7obt28vb93aka20tlds8grg79v88uqa.apps.googleusercontent.com",
+              "client_id": "556776541424-nfi9qqentvu10s1bprm5r5vpohsb6hne.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

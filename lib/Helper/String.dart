@@ -1,4 +1,4 @@
-import 'package:eshop/Helper/Constant.dart';
+import 'package:app/Helper/Constant.dart';
 
 final Uri getSliderApi = Uri.parse(baseUrl + 'get_slider_images');
 final Uri getCatApi = Uri.parse(baseUrl + 'get_categories');

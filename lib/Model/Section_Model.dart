@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:eshop/Helper/String.dart';
-import 'package:eshop/Model/User.dart';
+import 'package:app/Helper/String.dart';
+import 'package:app/Model/User.dart';
 
 class SectionModel {
   String id,

@@ -6,7 +6,7 @@ import 'package:flutter/rendering.dart';
 
 import 'Chat.dart';
 import 'Helper/Color.dart';
-import 'package:eshop/Helper/Session.dart';
+import 'package:app/Helper/Session.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 

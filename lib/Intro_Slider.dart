@@ -1,8 +1,8 @@
 
 
-import 'package:eshop/Helper/Session.dart';
-import 'package:eshop/Helper/String.dart';
-import 'package:eshop/SignInUpAcc.dart';
+import 'package:app/Helper/Session.dart';
+import 'package:app/Helper/String.dart';
+import 'package:app/SignInUpAcc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -173,7 +173,7 @@ class _GettingStartedScreenState extends State<IntroSlider>
                       _currentPage = _currentPage + 1;
                       _pageController.animateToPage(_currentPage,
                           curve: Curves.decelerate,
-                          duration: Duration(milliseconds: 300));
+                          duration: Duration(milliseconds: 200));
                     }
                   }),
             )),

@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:eshop/Helper/String.dart';
-import 'package:eshop/Privacy_Policy.dart';
-import 'package:eshop/Verify_Otp.dart';
+import 'package:app/Helper/String.dart';
+import 'package:app/Privacy_Policy.dart';
+import 'package:app/Verify_Otp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

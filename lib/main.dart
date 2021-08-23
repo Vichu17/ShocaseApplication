@@ -1,7 +1,7 @@
 import 'package:country_code_picker/country_localizations.dart';
-import 'package:eshop/Helper/Color.dart';
-import 'package:eshop/Helper/Constant.dart';
-import 'package:eshop/Splash.dart';
+import 'package:app/Helper/Color.dart';
+import 'package:app/Helper/Constant.dart';
+import 'package:app/Splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +21,14 @@ import 'Home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  initializedDownload();
-  await Firebase.initializeApp();
 
-  FirebaseMessaging.onBackgroundMessage(myForgroundMessageHandler);
+  try {
+    await Firebase.initializeApp();
+    initializedDownload();
+    FirebaseMessaging.onBackgroundMessage(myForgroundMessageHandler);
+  } on FirebaseException catch (e) {} catch (e) {
+    rethrow;
+  }
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent, // status bar color
@@ -64,7 +68,6 @@ Future<void> initializedDownload() async {
       debug: false // optional: set false to disable printing logs to console
       );
 }
-
 
 final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =
     GlobalKey<ScaffoldMessengerState>();

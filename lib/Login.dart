@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:eshop/Helper/String.dart';
-import 'package:eshop/SendOtp.dart';
+import 'package:app/Helper/String.dart';
+import 'package:app/SendOtp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

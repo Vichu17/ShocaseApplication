@@ -6,14 +6,14 @@ import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:eshop/All_Category.dart';
-import 'package:eshop/Favorite.dart';
-import 'package:eshop/Helper/Color.dart';
-import 'package:eshop/MyProfile.dart';
-import 'package:eshop/ProductList.dart';
-import 'package:eshop/Product_Detail.dart';
+import 'package:app/All_Category.dart';
+import 'package:app/Favorite.dart';
+import 'package:app/Helper/Color.dart';
+import 'package:app/MyProfile.dart';
+import 'package:app/ProductList.dart';
+import 'package:app/Product_Detail.dart';
 
-import 'package:eshop/SectionList.dart';
+import 'package:app/SectionList.dart';
 
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/cupertino.dart';
@@ -144,7 +144,7 @@ class StateHome extends State<Home> {
 
     return AppBar(
       title: curSelected == 0
-          ? SvgPicture.asset('assets/images/titleicon.svg')
+          ? SvgPicture.asset('assets/images/SHOCASE.svg')
           : Text(
               title,
               style: TextStyle(
@@ -211,7 +211,7 @@ class StateHome extends State<Home> {
           ),
         ),
       ],
-      backgroundColor: curSelected == 0 ? Colors.transparent : colors.white,
+      backgroundColor: curSelected == 0 ? Colors.transparent : Color(0xFF0e2149),
       elevation: 0,
     );
   }
@@ -220,8 +220,8 @@ class StateHome extends State<Home> {
     isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return CurvedNavigationBar(
         key: bottomNavigationKey,
-        backgroundColor: isDarkTheme ? colors.darkColor : colors.lightWhite,
-        color: isDarkTheme ? colors.darkColor2 : colors.white,
+        backgroundColor: isDarkTheme ? colors.darkColor : Color(0xFF0e2149),
+        color: isDarkTheme ? colors.darkColor2 : Color(0xFF0e2149),
         height: 65,
         items: <Widget>[
           curSelected == 0
@@ -612,6 +612,7 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
         ? Stack(
             children: [
               Container(
+                // decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50),),color: Colors.black,),
                 height: height,
                 width: double.infinity,
                 margin: EdgeInsetsDirectional.only(top: 10),
@@ -762,7 +763,7 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
                   color: isDarkTheme ? colors.secondary : colors.primary,
                 ),
               ),
-              fillColor: colors.white,
+              fillColor: Colors.white54,
               filled: true),
         ),
       ),
@@ -799,10 +800,12 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 getTranslated(context, 'seeAll'),
-                style: Theme.of(context)
-                    .textTheme
-                    .caption
-                    .copyWith(color: colors.primary),
+                style:
+                  TextStyle(color: Color(0xff202844)),
+                // style: Theme.of(context)
+                //     .textTheme
+                //     .caption
+                //     .copyWith(color: colors.white),
               ),
             ),
             onTap: () async {

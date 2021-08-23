@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:eshop/Cart.dart';
-import 'package:eshop/CompareList.dart';
-import 'package:eshop/ProductList.dart';
-import 'package:eshop/ReviewList.dart';
+import 'package:app/Cart.dart';
+import 'package:app/CompareList.dart';
+import 'package:app/ProductList.dart';
+import 'package:app/ReviewList.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:eshop/Helper/Session.dart';
-import 'package:eshop/Model/Faqs_Model.dart';
+import 'package:app/Helper/Session.dart';
+import 'package:app/Model/Faqs_Model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';

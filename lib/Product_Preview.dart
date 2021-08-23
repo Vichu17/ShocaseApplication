@@ -1,4 +1,4 @@
-import 'package:eshop/Helper/Color.dart';
+import 'package:app/Helper/Color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';

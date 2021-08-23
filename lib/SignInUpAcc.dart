@@ -1,6 +1,6 @@
-import 'package:eshop/Helper/Session.dart';
-import 'package:eshop/Helper/String.dart';
-import 'package:eshop/Login.dart';
+import 'package:app/Helper/Session.dart';
+import 'package:app/Helper/String.dart';
+import 'package:app/Login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

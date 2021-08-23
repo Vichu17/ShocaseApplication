@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:eshop/Helper/Session.dart';
+import 'package:app/Helper/Session.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
@@ -215,7 +215,7 @@ class _SearchState extends State<Search> with TickerProviderStateMixin {
             autofocus: true,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.fromLTRB(0, 15.0, 0, 15.0),
-              hintText: 'Search',
+              hintText: getTranslated(context, 'SEARCH_LBL'),
               hintStyle: TextStyle(color: colors.primary.withOpacity(0.5)),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: colors.white),

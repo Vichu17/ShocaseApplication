@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:eshop/Helper/AppBtn.dart';
-import 'package:eshop/Helper/SimBtn.dart';
+import 'package:app/Helper/AppBtn.dart';
+import 'package:app/Helper/SimBtn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:eshop/Model/Order_Model.dart';
-import 'package:eshop/Model/Section_Model.dart';
+import 'package:app/Model/Order_Model.dart';
+import 'package:app/Model/Section_Model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

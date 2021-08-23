@@ -1,4 +1,4 @@
-import 'package:eshop/Model/User.dart';
+import 'package:app/Model/User.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
