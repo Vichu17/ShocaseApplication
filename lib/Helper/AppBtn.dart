@@ -34,6 +34,7 @@ class AppBtn extends StatelessWidget {
 
           alignment: FractionalOffset.center,
           decoration: new BoxDecoration(
+            border: Border.all(width: 1,color: Colors.white),
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,

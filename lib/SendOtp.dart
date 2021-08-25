@@ -190,7 +190,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
       flex: widget.title == getTranslated(context, 'SEND_OTP_TITLE') ? 4 : 5,
       child: Container(
         child: Center(
-          child: new SvgPicture.asset('assets/images/homelogo.svg'),
+          child: new Image.asset('assets/images/shocase.png'),
         ),
       ),
     );
@@ -211,7 +211,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                 .of(context)
                 .textTheme
                 .subtitle1
-                .copyWith(color: colors.fontColor, fontWeight: FontWeight.bold),
+                .copyWith(color: Color(0xFF0e2149), fontWeight: FontWeight.bold),
           ),
         ));
   }
@@ -230,7 +230,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                 .textTheme
                 .subtitle2
                 .copyWith(
-              color: colors.fontColor,
+              color: Color(0xFF0e2149),
               fontWeight: FontWeight.normal,
             ),
           ),
@@ -351,7 +351,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                   .textTheme
                   .caption
                   .copyWith(
-                  color: colors.fontColor,
+                  color: Color(0xFF0e2149),
                   fontWeight: FontWeight.normal)),
           SizedBox(
             height: 3.0,
@@ -374,7 +374,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                       .textTheme
                       .caption
                       .copyWith(
-                      color: colors.fontColor,
+                      color: Color(0xFF0e2149),
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.normal),
                 )),
@@ -387,7 +387,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                     .textTheme
                     .caption
                     .copyWith(
-                    color: colors.fontColor,
+                    color: Color(0xFF0e2149),
                     fontWeight: FontWeight.normal)),
             SizedBox(
               width: 5.0,
@@ -409,7 +409,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                       .textTheme
                       .caption
                       .copyWith(
-                      color: colors.fontColor,
+                      color: Color(0xFF0e2149),
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.normal),
                 )),

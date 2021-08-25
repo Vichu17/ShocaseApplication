@@ -196,9 +196,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
     return Expanded(
       flex: 4,
       child: Center(
-        child: SvgPicture.asset(
-          'assets/images/homelogo.svg',
-        ),
+        child: Image.asset('assets/images/shocase.png'),
       ),
     );
   }
@@ -215,7 +213,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
             style: Theme.of(context)
                 .textTheme
                 .subtitle1
-                .copyWith(color: colors.fontColor, fontWeight: FontWeight.bold),
+                .copyWith(color: Color(0xFF0e2149), fontWeight: FontWeight.bold),
           ),
         ));
   }
@@ -335,7 +333,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
               },
               child: Text(getTranslated(context, 'FORGOT_PASSWORD_LBL'),
                   style: Theme.of(context).textTheme.subtitle2.copyWith(
-                      color: colors.fontColor, fontWeight: FontWeight.normal)),
+                      color: Color(0xFF0e2149), fontWeight: FontWeight.normal)),
             ),
           ],
         ));
@@ -350,7 +348,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
         children: <Widget>[
           Text(getTranslated(context, 'DONT_HAVE_AN_ACC'),
               style: Theme.of(context).textTheme.caption.copyWith(
-                  color: colors.fontColor, fontWeight: FontWeight.normal)),
+                  color: Color(0xFF0e2149), fontWeight: FontWeight.normal)),
           InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
@@ -362,7 +360,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
               child: Text(
                 getTranslated(context, 'SIGN_UP_LBL'),
                 style: Theme.of(context).textTheme.caption.copyWith(
-                    color: colors.fontColor,
+                    color: Color(0xFF0e2149),
                     decoration: TextDecoration.underline,
                     fontWeight: FontWeight.normal),
               ))

@@ -144,7 +144,7 @@ class StateHome extends State<Home> {
 
     return AppBar(
       title: curSelected == 0
-          ? SvgPicture.asset('assets/images/SHOCASE.svg')
+          ? Image.asset('assets/images/titlelogo.png')
           : Text(
               title,
               style: TextStyle(
@@ -754,7 +754,7 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
               isDense: true,
               hintText: getTranslated(context, 'searchHint'),
               hintStyle: Theme.of(context).textTheme.bodyText2.copyWith(
-                    color: colors.fontColor,
+                    color: colors.black,
                   ),
               suffixIcon: Padding(
                 padding: const EdgeInsets.all(8.0),

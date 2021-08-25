@@ -1240,7 +1240,7 @@ class StateProfile extends State<Profile> with TickerProviderStateMixin {
                         child: Container(
                           // color: Colors.white,
                             child: Card(
-                              color: Colors.black,
+                              color: Colors.white,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(

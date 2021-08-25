@@ -17,9 +17,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
   _subLogo() {
     return Padding(
         padding: EdgeInsetsDirectional.only(top: 30.0),
-        child: SvgPicture.asset(
-          'assets/images/homelogo.svg',
-        ));
+        child: Image.asset('assets/images/shocase.png'),);
   }
 
   welcomeEshopTxt() {
@@ -70,6 +68,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
           height: 45,
           alignment: FractionalOffset.center,
           decoration: new BoxDecoration(
+            border: Border.all(width: 1,color: Colors.white),
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -97,6 +96,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
           height: 45,
           alignment: FractionalOffset.center,
           decoration: new BoxDecoration(
+            border: Border.all(width: 1,color: Colors.white),
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -127,6 +127,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
           height: 45,
           alignment: FractionalOffset.center,
           decoration: new BoxDecoration(
+            border: Border.all(width: 1,color: Colors.white),
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,

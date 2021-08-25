@@ -35,22 +35,48 @@ class _SplashScreen extends State<Splash> {
             key: _scaffoldKey,
             body: Stack(
                 children: <Widget>[
-                    Container(
-                        width: double.infinity,
-                        height: double.infinity,
-                        decoration: back(),
+                    Positioned(
+                        child: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: back(),
+                        ),
+                    ),
+                    Positioned(
+                        bottom: 150,
+                        left: 70,
                         child: Center(
-                            child: SvgPicture.asset(
-                                'assets/images/splashlogo.svg',
+                            child: Container(
+                                child: Image.asset('assets/images/shocase.png'),
                             ),
                         ),
                     ),
-                    Image.asset(
-                       'assets/images/doodle.png',
-                        fit: BoxFit.fill,
-                        width: double.infinity,
-                        height: double.infinity,
+                    Positioned(
+                        top: 130,
+                        left: 100,
+                        child: Center(
+                            child: Container(
+                                child: Text(
+                                    'WELCOME!',
+                                    style: TextStyle(color: Colors.white, fontSize: 40),
+                                ),
+                            ),
+                        ),
                     ),
+                    Positioned(
+                        child: Center(
+                            child: Container(
+                                child: SvgPicture.asset('assets/images/intro.svg'),
+                            ),
+                        ),
+                    ),
+
+                    // Image.asset(
+                    //    'assets/images/doodle.png',
+                    //     fit: BoxFit.fill,
+                    //     width: double.infinity,
+                    //     height: double.infinity,
+                    // ),
                 ],
             ),
         );
