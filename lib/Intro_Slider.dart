@@ -173,7 +173,7 @@ class _GettingStartedScreenState extends State<IntroSlider>
                       _currentPage = _currentPage + 1;
                       _pageController.animateToPage(_currentPage,
                           curve: Curves.decelerate,
-                          duration: Duration(milliseconds: 200));
+                          duration: Duration(milliseconds: 300));
                     }
                   }),
             )),

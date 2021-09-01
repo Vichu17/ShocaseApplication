@@ -220,7 +220,7 @@ class StateAddress extends State<ManageAddress> with TickerProviderStateMixin {
                       ),
                       child: Text(getTranslated(context, 'ADDADDRESS'),
                           style: Theme.of(context).textTheme.subtitle1.copyWith(
-                                color: colors.white,
+                                color: Colors.white,
                               ))),
                   onTap: () async {
                     await Navigator.push(

@@ -130,7 +130,7 @@ class StateCat extends State<AllCategory> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ClipRRect(
-                  borderRadius: BorderRadius.circular(25.0),
+                  borderRadius: BorderRadius.circular(35.0),
                   child: FadeInImage(
                     image: NetworkImage(catList[index].image),
                     fadeInDuration: Duration(milliseconds: 150),

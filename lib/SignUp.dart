@@ -511,6 +511,7 @@ class _SignUpPageState extends State<SignUp> with TickerProviderStateMixin {
                 child: Form(
               key: _formkey,
               child: Card(
+                color: Colors.white,
                 elevation: 0.5,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
@@ -563,7 +564,8 @@ class _SignUpPageState extends State<SignUp> with TickerProviderStateMixin {
         body: _isNetworkAvail
             ? SafeArea(
                 child: Container(
-                    color: colors.lightWhite,
+                    // color: colors.lightWhite,
+                    color: colors.shocaseBlue,
                     padding: EdgeInsetsDirectional.only(
                       bottom: 20.0,
                     ),

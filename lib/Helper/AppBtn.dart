@@ -29,6 +29,7 @@ class AppBtn extends StatelessWidget {
       padding: EdgeInsets.only(top: 25),
       child: CupertinoButton(
         child: Container(
+
           width: btnAnim.value,
           height: 45,
 
@@ -41,7 +42,7 @@ class AppBtn extends StatelessWidget {
                 colors: [colors.grad1Color, colors.grad2Color],
                 stops: [0, 1]),
 
-            borderRadius: new BorderRadius.all(const Radius.circular(10.0)),
+            borderRadius: new BorderRadius.all(const Radius.circular(10.0),),
           ),
           child: btnAnim.value > 75.0
               ? Text(title,
@@ -50,7 +51,7 @@ class AppBtn extends StatelessWidget {
                   .of(context)
                   .textTheme
                   .headline6
-                  .copyWith(color: colors.white, fontWeight: FontWeight.normal))
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.normal))
               : new CircularProgressIndicator(
             valueColor: new AlwaysStoppedAnimation<Color>(colors.white),
           ),

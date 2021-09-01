@@ -791,7 +791,7 @@ class StateProduct extends State<ProductList> with TickerProviderStateMixin {
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: SvgPicture.asset(
-                      'assets/images/noti_cart.svg',
+                            'assets/images/noti_cart.svg',
                     ),
                   ),
                 ),

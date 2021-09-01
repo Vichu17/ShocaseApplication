@@ -423,8 +423,7 @@ class StateProfile extends State<Profile> with TickerProviderStateMixin {
                   children: [
                     Text(
                       getTranslated(context, 'NAME_LBL'),
-                      // style: TextStyle(color: Colors.black26,
-                        style: Theme.of(this.context).textTheme.caption.copyWith(
+                      style: Theme.of(this.context).textTheme.caption.copyWith(
                           color: colors.lightBlack2,
                           fontWeight: FontWeight.normal),
                     ),
@@ -446,7 +445,7 @@ class StateProfile extends State<Profile> with TickerProviderStateMixin {
               icon: Icon(
                 Icons.edit,
                 size: 20,
-                color: colors.black,
+                color: colors.lightBlack,
               ),
               onPressed: () {
                 dialogAnimate(context,  AlertDialog(
@@ -944,7 +943,7 @@ class StateProfile extends State<Profile> with TickerProviderStateMixin {
                 child: Text(
                   getTranslated(context, 'CHANGE_PASS_LBL'),
                   style: Theme.of(this.context).textTheme.subtitle2.copyWith(
-                      color: Color(0xFF0e2149), fontWeight: FontWeight.bold),
+                      color: colors.fontColor, fontWeight: FontWeight.bold),
                 ),
               ),
               onTap: () {
@@ -1238,13 +1237,11 @@ class StateProfile extends State<Profile> with TickerProviderStateMixin {
                         padding: const EdgeInsetsDirectional.only(
                             top: 20, bottom: 5.0),
                         child: Container(
-                          // color: Colors.white,
                             child: Card(
-                              color: Colors.white,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
-                                        Radius.circular(20.0))),
+                                        Radius.circular(10.0))),
                                 child: Column(
                                   children: <Widget>[
                                     setUser(),

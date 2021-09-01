@@ -45,7 +45,7 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
   var isDarkTheme;
   bool isDark = false;
   ThemeNotifier themeNotifier;
-  List<String> langCode = ["en", "zh", "es", "hi", "ar", "ru", "ja", "de"];
+  List<String> langCode = ["en", "ml", "zh", "es", "hi", "ar", "ru", "ja", "de"];
   List<String> themeList = [];
   List<String> languageList = [];
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
@@ -61,6 +61,7 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
     new Future.delayed(Duration.zero, () {
       languageList = [
         getTranslated(context, 'ENGLISH_LAN'),
+        getTranslated(context, 'MALAYALAM_LAN'),
         getTranslated(context, 'CHINESE_LAN'),
         getTranslated(context, 'SPANISH_LAN'),
         getTranslated(context, 'HINDI_LAN'),
@@ -154,18 +155,15 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
                               padding: const EdgeInsetsDirectional.only(top: 7),
                               child: InkWell(
                                 child: Text(
-                                  getTranslated(context, 'LOGIN_REGISTER_LBL'),
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      decoration: TextDecoration.underline),
-                                  // style: Theme.of(context)
-                                  //       .textTheme
-                                  //       .caption
-                                  //       .copyWith(
-                                  //         color: colors.primary,
-                                  //         decoration: TextDecoration.underline,
-                                  //       ),
-                                ),
+                                    getTranslated(
+                                        context, 'LOGIN_REGISTER_LBL'),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .caption
+                                        .copyWith(
+                                          color: colors.primary,
+                                          decoration: TextDecoration.underline,
+                                        )),
                                 onTap: () {
                                   Navigator.push(
                                       context,
@@ -183,24 +181,17 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      getTranslated(
-                                          context, 'EDIT_PROFILE_LBL'),
-                                      style: TextStyle(color: Colors.white),
-                                      // style: Theme.of(context)
-                                      //     .textTheme
-                                      //     .caption
-                                      //     .copyWith(color: colors.primary),
-                                    ),
+                                        getTranslated(
+                                            context, 'EDIT_PROFILE_LBL'),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .caption
+                                            .copyWith(color: colors.primary)),
                                     Icon(
                                       Icons.arrow_right_outlined,
-                                      color: colors.white,
+                                      color: colors.primary,
                                       size: 20,
                                     ),
-                                    // Icon(
-                                    //   Icons.arrow_right_outlined,
-                                    //   color: colors.primary,
-                                    //   size: 20,
-                                    // ),
                                   ],
                                 ),
                                 onTap: () async {
@@ -255,7 +246,7 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
                   if (mounted)
                     setState(() {
                       selectLan = index;
-                      _changeLan(langCode[index], ctx);
+                      _changeLan(langCode[index],ctx);
                     });
                 },
                 child: Padding(
@@ -326,182 +317,202 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
 
   _showDialog() async {
     await dialogAnimate(context,
-        StatefulBuilder(builder: (BuildContext context, StateSetter setStater) {
-      return AlertDialog(
-        contentPadding: const EdgeInsets.all(0.0),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(5.0))),
-        content: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                      padding: EdgeInsets.fromLTRB(20.0, 20.0, 0, 2.0),
-                      child: Text(
-                        getTranslated(context, 'CHANGE_PASS_LBL'),
-                        style: Theme.of(this.context)
-                            .textTheme
-                            .subtitle1
-                            .copyWith(color: colors.fontColor),
-                      )),
-                  Divider(color: colors.lightBlack),
-                  Form(
-                      key: _formkey,
-                      child: new Column(
-                        children: <Widget>[
-                          Padding(
-                              padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
-                              child: TextFormField(
-                                keyboardType: TextInputType.text,
-                                validator: (val) => validatePass(
-                                    val,
-                                    getTranslated(context, 'PWD_REQUIRED'),
-                                    getTranslated(context, 'PWD_LENGTH')),
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                decoration: InputDecoration(
-                                    hintText:
-                                        getTranslated(context, 'CUR_PASS_LBL'),
-                                    hintStyle: Theme.of(this.context)
-                                        .textTheme
-                                        .subtitle1
-                                        .copyWith(
+           StatefulBuilder(
+              builder: (BuildContext context, StateSetter setStater) {
+            return AlertDialog(
+              contentPadding: const EdgeInsets.all(0.0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0))),
+              content: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                            padding: EdgeInsets.fromLTRB(20.0, 20.0, 0, 2.0),
+                            child: Text(
+                              getTranslated(context, 'CHANGE_PASS_LBL'),
+                              style: Theme.of(this.context)
+                                  .textTheme
+                                  .subtitle1
+                                  .copyWith(color: colors.fontColor),
+                            )),
+                        Divider(color: colors.lightBlack),
+                        Form(
+                            key: _formkey,
+                            child: new Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding:
+                                        EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.text,
+                                      validator: (val) => validatePass(
+                                          val,
+                                          getTranslated(
+                                              context, 'PWD_REQUIRED'),
+                                          getTranslated(context, 'PWD_LENGTH')),
+                                      autovalidateMode:
+                                          AutovalidateMode.onUserInteraction,
+                                      decoration: InputDecoration(
+                                          hintText: getTranslated(
+                                              context, 'CUR_PASS_LBL'),
+                                          hintStyle: Theme.of(this.context)
+                                              .textTheme
+                                              .subtitle1
+                                              .copyWith(
+                                                  color: colors.lightBlack,
+                                                  fontWeight:
+                                                      FontWeight.normal),
+                                          suffixIcon: IconButton(
+                                            icon: Icon(_showPassword
+                                                ? Icons.visibility
+                                                : Icons.visibility_off),
+                                            iconSize: 20,
                                             color: colors.lightBlack,
-                                            fontWeight: FontWeight.normal),
-                                    suffixIcon: IconButton(
-                                      icon: Icon(_showPassword
-                                          ? Icons.visibility
-                                          : Icons.visibility_off),
-                                      iconSize: 20,
-                                      color: colors.lightBlack,
-                                      onPressed: () {
-                                        setStater(() {
-                                          _showPassword = !_showPassword;
-                                        });
-                                      },
+                                            onPressed: () {
+                                              setStater(() {
+                                                _showPassword = !_showPassword;
+                                              });
+                                            },
+                                          )),
+                                      obscureText: !_showPassword,
+                                      controller: curPassC,
+                                      onChanged: (v) => setState(() {
+                                        curPass = v;
+                                      }),
                                     )),
-                                obscureText: !_showPassword,
-                                controller: curPassC,
-                                onChanged: (v) => setState(() {
-                                  curPass = v;
-                                }),
-                              )),
-                          Padding(
-                              padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
-                              child: TextFormField(
-                                keyboardType: TextInputType.text,
-                                validator: (val) => validatePass(
-                                    val,
-                                    getTranslated(context, 'PWD_REQUIRED'),
-                                    getTranslated(context, 'PWD_LENGTH')),
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                decoration: new InputDecoration(
-                                    hintText:
-                                        getTranslated(context, 'NEW_PASS_LBL'),
-                                    hintStyle: Theme.of(this.context)
-                                        .textTheme
-                                        .subtitle1
-                                        .copyWith(
+                                Padding(
+                                    padding:
+                                        EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.text,
+                                      validator: (val) => validatePass(
+                                          val,
+                                          getTranslated(
+                                              context, 'PWD_REQUIRED'),
+                                          getTranslated(context, 'PWD_LENGTH')),
+                                      autovalidateMode:
+                                          AutovalidateMode.onUserInteraction,
+                                      decoration: new InputDecoration(
+                                          hintText: getTranslated(
+                                              context, 'NEW_PASS_LBL'),
+                                          hintStyle: Theme.of(this.context)
+                                              .textTheme
+                                              .subtitle1
+                                              .copyWith(
+                                                  color: colors.lightBlack,
+                                                  fontWeight:
+                                                      FontWeight.normal),
+                                          suffixIcon: IconButton(
+                                            icon: Icon(_showNPassword
+                                                ? Icons.visibility
+                                                : Icons.visibility_off),
+                                            iconSize: 20,
                                             color: colors.lightBlack,
-                                            fontWeight: FontWeight.normal),
-                                    suffixIcon: IconButton(
-                                      icon: Icon(_showNPassword
-                                          ? Icons.visibility
-                                          : Icons.visibility_off),
-                                      iconSize: 20,
-                                      color: colors.lightBlack,
-                                      onPressed: () {
-                                        setStater(() {
-                                          _showNPassword = !_showNPassword;
-                                        });
-                                      },
+                                            onPressed: () {
+                                              setStater(() {
+                                                _showNPassword =
+                                                    !_showNPassword;
+                                              });
+                                            },
+                                          )),
+                                      obscureText: !_showNPassword,
+                                      controller: newPassC,
+                                      onChanged: (v) => setState(() {
+                                        newPass = v;
+                                      }),
                                     )),
-                                obscureText: !_showNPassword,
-                                controller: newPassC,
-                                onChanged: (v) => setState(() {
-                                  newPass = v;
-                                }),
-                              )),
-                          Padding(
-                              padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
-                              child: TextFormField(
-                                keyboardType: TextInputType.text,
-                                validator: (value) {
-                                  if (value.length == 0)
-                                    return getTranslated(
-                                        context, 'CON_PASS_REQUIRED_MSG');
-                                  if (value != newPass) {
-                                    return getTranslated(
-                                        context, 'CON_PASS_NOT_MATCH_MSG');
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                decoration: new InputDecoration(
-                                    hintText: getTranslated(
-                                        context, 'CONFIRMPASSHINT_LBL'),
-                                    hintStyle: Theme.of(this.context)
-                                        .textTheme
-                                        .subtitle1
-                                        .copyWith(
+                                Padding(
+                                    padding:
+                                        EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.text,
+                                      validator: (value) {
+                                        if (value.length == 0)
+                                          return getTranslated(
+                                              context, 'CON_PASS_REQUIRED_MSG');
+                                        if (value != newPass) {
+                                          return getTranslated(context,
+                                              'CON_PASS_NOT_MATCH_MSG');
+                                        } else {
+                                          return null;
+                                        }
+                                      },
+                                      autovalidateMode:
+                                          AutovalidateMode.onUserInteraction,
+                                      decoration: new InputDecoration(
+                                          hintText: getTranslated(
+                                              context, 'CONFIRMPASSHINT_LBL'),
+                                          hintStyle: Theme.of(this.context)
+                                              .textTheme
+                                              .subtitle1
+                                              .copyWith(
+                                                  color: colors.lightBlack,
+                                                  fontWeight:
+                                                      FontWeight.normal),
+                                          suffixIcon: IconButton(
+                                            icon: Icon(_showCPassword
+                                                ? Icons.visibility
+                                                : Icons.visibility_off),
+                                            iconSize: 20,
                                             color: colors.lightBlack,
-                                            fontWeight: FontWeight.normal),
-                                    suffixIcon: IconButton(
-                                      icon: Icon(_showCPassword
-                                          ? Icons.visibility
-                                          : Icons.visibility_off),
-                                      iconSize: 20,
-                                      color: colors.lightBlack,
-                                      onPressed: () {
-                                        setStater(() {
-                                          _showCPassword = !_showCPassword;
-                                        });
-                                      },
+                                            onPressed: () {
+                                              setStater(() {
+                                                _showCPassword =
+                                                    !_showCPassword;
+                                              });
+                                            },
+                                          )),
+                                      obscureText: !_showCPassword,
+                                      controller: confPassC,
+                                      onChanged: (v) => setState(() {
+                                        confPass = v;
+                                      }),
                                     )),
-                                obscureText: !_showCPassword,
-                                controller: confPassC,
-                                onChanged: (v) => setState(() {
-                                  confPass = v;
-                                }),
-                              )),
-                        ],
-                      ))
-                ])),
-        actions: <Widget>[
-          new TextButton(
-              child: Text(
-                getTranslated(context, 'CANCEL'),
-                style: Theme.of(this.context).textTheme.subtitle2.copyWith(
-                    color: colors.lightBlack, fontWeight: FontWeight.bold),
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-          new TextButton(
-              child: Text(
-                getTranslated(context, 'SAVE_LBL'),
-                style: Theme.of(this.context).textTheme.subtitle2.copyWith(
-                    color: colors.fontColor, fontWeight: FontWeight.bold),
-              ),
-              onPressed: () {
-                final form = _formkey.currentState;
-                if (form.validate()) {
-                  form.save();
-                  if (mounted)
-                    setState(() {
+                              ],
+                            ))
+                      ])),
+              actions: <Widget>[
+                new TextButton(
+                    child: Text(
+                      getTranslated(context, 'CANCEL'),
+                      style: Theme.of(this.context)
+                          .textTheme
+                          .subtitle2
+                          .copyWith(
+                              color: colors.lightBlack,
+                              fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {
                       Navigator.pop(context);
-                    });
-                  setUpdateUser();
-                }
-              })
-        ],
-      );
-    }));
+                    }),
+                new TextButton(
+                    child: Text(
+                      getTranslated(context, 'SAVE_LBL'),
+                      style: Theme.of(this.context)
+                          .textTheme
+                          .subtitle2
+                          .copyWith(
+                              color: colors.fontColor,
+                              fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {
+                      final form = _formkey.currentState;
+                      if (form.validate()) {
+                        form.save();
+                        if (mounted)
+                          setState(() {
+                            Navigator.pop(context);
+                          });
+                        setUpdateUser();
+                      }
+                    })
+              ],
+            );
+          }));
+        
   }
 
   Future<void> setUpdateUser() async {
@@ -770,36 +781,38 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
 
   languageDialog() async {
     await dialogAnimate(context,
-        StatefulBuilder(builder: (BuildContext context, StateSetter setStater) {
-      return AlertDialog(
-        contentPadding: const EdgeInsets.all(0.0),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(5.0))),
-        content: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 0, 2.0),
-                child: Text(
-                  getTranslated(context, 'CHOOSE_LANGUAGE_LBL'),
-                  style: Theme.of(this.context)
-                      .textTheme
-                      .subtitle1
-                      .copyWith(color: colors.fontColor),
-                )),
-            Divider(color: colors.lightBlack),
-            Flexible(
-              child: SingleChildScrollView(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: getLngList(context)),
+           StatefulBuilder(
+              builder: (BuildContext context, StateSetter setStater) {
+            return AlertDialog(
+              contentPadding: const EdgeInsets.all(0.0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0))),
+              content: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                      padding: EdgeInsets.fromLTRB(20.0, 20.0, 0, 2.0),
+                      child: Text(
+                        getTranslated(context, 'CHOOSE_LANGUAGE_LBL'),
+                        style: Theme.of(this.context)
+                            .textTheme
+                            .subtitle1
+                            .copyWith(color: colors.fontColor),
+                      )),
+                  Divider(color: colors.lightBlack),
+                  Flexible(
+                    child: SingleChildScrollView(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: getLngList(context)),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
-      );
-    }));
+            );
+          }));
+        
   }
 
   themeDialog() async {
@@ -851,7 +864,7 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
               index,
               InkWell(
                 onTap: () {
-                  _updateState(index, ctx);
+                  _updateState(index,ctx);
                 },
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5),
@@ -915,15 +928,18 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
   _updateState(int position, BuildContext ctx) {
     curTheme = position;
 
-    onThemeChanged(themeList[position], ctx);
+
+    onThemeChanged(themeList[position],ctx);
   }
 
   void onThemeChanged(
-    String value,
-    BuildContext ctx,
+    String value, BuildContext ctx,
   ) async {
+
     if (value == getTranslated(ctx, 'SYSTEM_DEFAULT')) {
       themeNotifier.setThemeMode(ThemeMode.system);
+
+
 
       var brightness = SchedulerBinding.instance.window.platformBrightness;
       if (mounted)
@@ -935,6 +951,7 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
             SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
         });
     } else if (value == getTranslated(ctx, 'LIGHT_THEME')) {
+
       themeNotifier.setThemeMode(ThemeMode.light);
       if (mounted)
         setState(() {

@@ -1270,7 +1270,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                       ),
                       child: Text(getTranslated(context, 'SAVE_LBL'),
                           style: Theme.of(context).textTheme.subtitle1.copyWith(
-                                color: colors.white,
+                                color: Colors.white,
                               ))),
                   onTap: () {
                     validateAndSubmit();

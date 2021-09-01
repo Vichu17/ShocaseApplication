@@ -2988,6 +2988,7 @@ class StateCart extends State<Cart> with TickerProviderStateMixin {
                         child: Text(getTranslated(context, 'APPLY'),
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.button.copyWith(
+                                  // color: Colors.white,
                                   color: colors.fontColor,
                                 ))),
                     onPressed: () {

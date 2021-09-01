@@ -81,7 +81,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
               style: Theme.of(context)
                   .textTheme
                   .subtitle1
-                  .copyWith(color: colors.white, fontWeight: FontWeight.normal))),
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.normal))),
       onPressed: () {
         Navigator.push(context,
             MaterialPageRoute(builder: (BuildContext context) => Login()));
@@ -109,7 +109,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
               style: Theme.of(context)
                   .textTheme
                   .subtitle1
-                  .copyWith(color: colors.white, fontWeight: FontWeight.normal))),
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.normal))),
       onPressed: () {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (BuildContext context) => SendOtp(
@@ -140,7 +140,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
               style: Theme.of(context)
                   .textTheme
                   .subtitle1
-                  .copyWith(color: colors.white, fontWeight: FontWeight.normal))),
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.normal))),
       onPressed: () {
         Navigator.pushNamedAndRemoveUntil(context, "/home", (r) => false);
       },
@@ -152,7 +152,8 @@ class _SignInUpAccState extends State<SignInUpAcc> {
     deviceHeight = MediaQuery.of(context).size.height;
     deviceWidth = MediaQuery.of(context).size.width;
     return Container(
-        color: colors.lightWhite,
+        // color: colors.lightWhite,
+        color: colors.shocaseBlue,
         child: Center(
             child: SingleChildScrollView(
                 child: Column(

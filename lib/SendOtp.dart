@@ -231,7 +231,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                 .subtitle2
                 .copyWith(
               color: Color(0xFF0e2149),
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ));
@@ -352,7 +352,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
                   .caption
                   .copyWith(
                   color: Color(0xFF0e2149),
-                  fontWeight: FontWeight.normal)),
+                  fontWeight: FontWeight.bold)),
           SizedBox(
             height: 3.0,
           ),
@@ -467,6 +467,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
               child: Form(
                 key: _formkey,
                 child: Card(
+                  color: Colors.white,
                   elevation: 0.5,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
@@ -505,7 +506,8 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
         key: _scaffoldKey,
         body: _isNetworkAvail
             ? Container(
-            color: colors.lightWhite,
+            color: colors.shocaseBlue,
+            // color: colors.lightWhite,
             padding: EdgeInsets.only(
               bottom: 20.0,
             ),

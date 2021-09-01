@@ -413,6 +413,8 @@ Locale _locale(String languageCode) {
   switch (languageCode) {
     case "en":
       return Locale("en", 'US');
+    case "ml":
+      return Locale("ml", "ML");
     case "zh":
       return Locale("zh", "CN");
     case "es":

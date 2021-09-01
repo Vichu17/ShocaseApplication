@@ -333,7 +333,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
               },
               child: Text(getTranslated(context, 'FORGOT_PASSWORD_LBL'),
                   style: Theme.of(context).textTheme.subtitle2.copyWith(
-                      color: Color(0xFF0e2149), fontWeight: FontWeight.normal)),
+                      color: Color(0xFF0e2149), fontWeight: FontWeight.bold)),
             ),
           ],
         ));
@@ -348,7 +348,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
         children: <Widget>[
           Text(getTranslated(context, 'DONT_HAVE_AN_ACC'),
               style: Theme.of(context).textTheme.caption.copyWith(
-                  color: Color(0xFF0e2149), fontWeight: FontWeight.normal)),
+                  color: Color(0xFF0e2149), fontWeight: FontWeight.bold)),
           InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
@@ -362,7 +362,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
                 style: Theme.of(context).textTheme.caption.copyWith(
                     color: Color(0xFF0e2149),
                     decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.normal),
+                    fontWeight: FontWeight.bold),
               ))
         ],
       ),
@@ -391,6 +391,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
               child: Form(
                 key: _formkey,
                 child: Card(
+                  color: Colors.white,
                   elevation: 0.5,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
@@ -420,7 +421,8 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
         key: _scaffoldKey,
         body: _isNetworkAvail
             ? Container(
-                color: colors.lightWhite,
+                color: colors.shocaseBlue,
+                // color: colors.lightWhite,
                 padding: EdgeInsetsDirectional.only(
                   bottom: 20.0,
                 ),

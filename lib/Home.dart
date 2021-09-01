@@ -102,6 +102,7 @@ class StateHome extends State<Home> {
             key: scaffoldKey,
             appBar: curSelected == 3 ? null : _getAppbar(),
             // drawer: _getDrawer(),
+            extendBody: true,
             bottomNavigationBar: getBottomBar(),
             body: fragments[curSelected]));
   }
@@ -144,7 +145,10 @@ class StateHome extends State<Home> {
 
     return AppBar(
       title: curSelected == 0
-          ? Image.asset('assets/images/titlelogo.png')
+          ? isDarkTheme == true
+              ? Image.asset('assets/images/titlelogo.png')
+              // ? SvgPicture.asset('assets/images/titleicon.svg')
+              : Image.asset('assets/images/titlelogo.png')
           : Text(
               title,
               style: TextStyle(
@@ -211,7 +215,7 @@ class StateHome extends State<Home> {
           ),
         ),
       ],
-      backgroundColor: curSelected == 0 ? Colors.transparent : Color(0xFF0e2149),
+      backgroundColor: curSelected == 0 ? Color(0xFF0e2149) : colors.white,
       elevation: 0,
     );
   }
@@ -220,8 +224,10 @@ class StateHome extends State<Home> {
     isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return CurvedNavigationBar(
         key: bottomNavigationKey,
-        backgroundColor: isDarkTheme ? colors.darkColor : Color(0xFF0e2149),
-        color: isDarkTheme ? colors.darkColor2 : Color(0xFF0e2149),
+        backgroundColor: Colors.transparent,
+        // backgroundColor: isDarkTheme ? colors.darkColor : colors.lightWhite,
+        color: Color(0xFF0e2149),
+        // color: isDarkTheme ? colors.darkColor2 : colors.white,
         height: 65,
         items: <Widget>[
           curSelected == 0
@@ -459,17 +465,37 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
                     key: _refreshIndicatorKey,
                     onRefresh: _refresh,
                     child: SingleChildScrollView(
-                        padding: EdgeInsets.all(10),
+                        // padding: EdgeInsets.all(10),
                         child: Column(
-                          children: [
-                            _getSearchBar(),
-                            _slider(),
-                            _catHeading(),
-                            _catList(),
-                            _section(),
-                            _esxtraOffer()
-                          ],
-                        )))
+                      children: [
+                        Stack(children: <Widget>[
+                          Positioned(
+                            child: Container(
+                              alignment: Alignment.topCenter,
+                              height: 250,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(80),
+                                  bottomLeft: Radius.circular(80),
+                                ),
+                                color: Color(0xFF0e2149),
+                              ),
+                            ),
+                          ),
+                          Positioned(child: _getSearchBar()),
+                          Positioned(child: _slider()),
+                        ]),
+                        Container(
+                            padding: EdgeInsets.all(10),
+                            child: Column(children: [
+                              _catHeading(),
+                              _catList(),
+                              _section(),
+                              _esxtraOffer()
+                            ]))
+                      ],
+                    )))
             : noInternet(context));
   }
 
@@ -612,10 +638,10 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
         ? Stack(
             children: [
               Container(
-                // decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50),),color: Colors.black,),
                 height: height,
                 width: double.infinity,
-                margin: EdgeInsetsDirectional.only(top: 10),
+                padding: EdgeInsets.all(18),
+                margin: EdgeInsetsDirectional.only(top: 50),
                 child: PageView.builder(
                   itemCount: homeSliderList.length,
                   scrollDirection: Axis.horizontal,
@@ -714,7 +740,7 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
   }
 
   void _animateSlider() {
-    Future.delayed(Duration(seconds: 30)).then((_) {
+    Future.delayed(Duration(seconds: 5)).then((_) {
       if (mounted) {
         int nextPage = _controller.hasClients
             ? _controller.page.round() + 1
@@ -734,54 +760,57 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
 
   _getSearchBar() {
     isDarkTheme = Theme.of(context).brightness == Brightness.dark;
-    return GestureDetector(
-      child: SizedBox(
-        height: 35,
-        child: TextField(
-          enabled: false,
-          textAlign: TextAlign.left,
-          decoration: InputDecoration(
-              contentPadding: EdgeInsets.fromLTRB(15.0, 5.0, 0, 5.0),
-              border: new OutlineInputBorder(
-                borderRadius: const BorderRadius.all(
-                  const Radius.circular(50.0),
-                ),
-                borderSide: BorderSide(
-                  width: 0,
-                  style: BorderStyle.none,
-                ),
-              ),
-              isDense: true,
-              hintText: getTranslated(context, 'searchHint'),
-              hintStyle: Theme.of(context).textTheme.bodyText2.copyWith(
-                    color: colors.black,
+    return Container(
+      padding: EdgeInsets.all(15),
+      child: GestureDetector(
+        child: SizedBox(
+          height: 35,
+          child: TextField(
+            enabled: false,
+            textAlign: TextAlign.left,
+            decoration: InputDecoration(
+                contentPadding: EdgeInsets.fromLTRB(15.0, 5.0, 0, 5.0),
+                border: new OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(
+                    const Radius.circular(50.0),
                   ),
-              suffixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset(
-                  'assets/images/search.svg',
-                  color: isDarkTheme ? colors.secondary : colors.primary,
+                  borderSide: BorderSide(
+                    width: 0,
+                    style: BorderStyle.none,
+                  ),
                 ),
-              ),
-              fillColor: Colors.white54,
-              filled: true),
+                isDense: true,
+                hintText: getTranslated(context, 'searchHint'),
+                hintStyle: Theme.of(context).textTheme.bodyText2.copyWith(
+                      color: colors.fontColor,
+                    ),
+                suffixIcon: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SvgPicture.asset(
+                    'assets/images/search.svg',
+                    color: isDarkTheme ? colors.secondary : colors.primary,
+                  ),
+                ),
+                fillColor: colors.white,
+                filled: true),
+          ),
         ),
-      ),
-      onTap: () async {
-        // showSearch<Product>(
-        //     context: context,
-        //     delegate: _delegate,
-        //   );
+        onTap: () async {
+          // showSearch<Product>(
+          //     context: context,
+          //     delegate: _delegate,
+          //   );
 
-        await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Search(
-                updateHome: widget.updateHome,
-              ),
-            ));
-        if (mounted) setState(() {});
-      },
+          await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Search(
+                  updateHome: widget.updateHome,
+                ),
+              ));
+          if (mounted) setState(() {});
+        },
+      ),
     );
   }
 
@@ -800,12 +829,10 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 getTranslated(context, 'seeAll'),
-                style:
-                  TextStyle(color: Color(0xff202844)),
-                // style: Theme.of(context)
-                //     .textTheme
-                //     .caption
-                //     .copyWith(color: colors.white),
+                style: Theme.of(context)
+                    .textTheme
+                    .caption
+                    .copyWith(color: colors.primary),
               ),
             ),
             onTap: () async {
@@ -1496,7 +1523,7 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
       Response response = await post(getSettingApi,
               body: CUR_USERID != null ? parameter : null, headers: headers)
           .timeout(Duration(seconds: timeOut));
-        if (response.statusCode == 200) {
+      if (response.statusCode == 200) {
         var getdata = json.decode(response.body);
 
         bool error = getdata["error"];
@@ -1518,7 +1545,6 @@ class StateHomePage extends State<HomePage> with TickerProviderStateMixin {
           else
             ISFLAT_DEL = false;
           if (CUR_USERID != null) {
-
             CUR_CART_COUNT =
                 getdata["data"]["user_data"][0]["cart_total_items"].toString();
             REFER_CODE = getdata['data']['user_data'][0]['referral_code'];

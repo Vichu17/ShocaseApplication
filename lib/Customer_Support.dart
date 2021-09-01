@@ -94,7 +94,7 @@ class _CustomerSupportState extends State<CustomerSupport> {
             ),
             child: Icon(
               Icons.add,
-              color: colors.white,
+              color: Colors.white,
             ),
           ),
           onPressed: () async {
