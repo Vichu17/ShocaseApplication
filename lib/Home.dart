@@ -146,9 +146,9 @@ class StateHome extends State<Home> {
     return AppBar(
       title: curSelected == 0
           ? isDarkTheme == true
-              ? Image.asset('assets/images/titlelogo.png')
+              ? SvgPicture.asset('assets/images/SHOCASE.svg')
               // ? SvgPicture.asset('assets/images/titleicon.svg')
-              : Image.asset('assets/images/titlelogo.png')
+              : SvgPicture.asset('assets/images/SHOCASE.svg')
           : Text(
               title,
               style: TextStyle(

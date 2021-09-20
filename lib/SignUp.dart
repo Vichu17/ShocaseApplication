@@ -206,7 +206,7 @@ class _SignUpPageState extends State<SignUp> with TickerProviderStateMixin {
     return Expanded(
       flex: 2,
       child: Center(
-        child: new SvgPicture.asset('assets/images/homelogo.svg'),
+        child: new SvgPicture.asset('assets/images/SHOCASE.svg'),
       ),
     );
   }

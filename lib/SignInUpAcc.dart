@@ -17,7 +17,7 @@ class _SignInUpAccState extends State<SignInUpAcc> {
   _subLogo() {
     return Padding(
         padding: EdgeInsetsDirectional.only(top: 30.0),
-        child: Image.asset('assets/images/shocase.png'),);
+        child: SvgPicture.asset('assets/images/SHOCASE.svg'),);
   }
 
   welcomeEshopTxt() {

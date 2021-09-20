@@ -1932,7 +1932,7 @@ class StateCart extends State<Cart> with TickerProviderStateMixin {
             child: Text(getTranslated(context, 'SHOP_NOW'),
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline6.copyWith(
-                    color: colors.white, fontWeight: FontWeight.normal))),
+                    color: Colors.white, fontWeight: FontWeight.normal))),
         onPressed: () {
           Navigator.of(context).pushNamedAndRemoveUntil(
               '/home', (Route<dynamic> route) => false);

@@ -196,7 +196,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
     return Expanded(
       flex: 4,
       child: Center(
-        child: Image.asset('assets/images/shocase.png'),
+        child: SvgPicture.asset('assets/images/SHOCASE.svg'),
       ),
     );
   }

@@ -251,7 +251,7 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
     return Expanded(
       flex: 4,
       child: Center(
-        child: new SvgPicture.asset('assets/images/homelogo.svg'),
+        child: new SvgPicture.asset('assets/images/SHOCASE.svg'),
       ),
     );
   }

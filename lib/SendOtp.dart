@@ -190,7 +190,7 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
       flex: widget.title == getTranslated(context, 'SEND_OTP_TITLE') ? 4 : 5,
       child: Container(
         child: Center(
-          child: new Image.asset('assets/images/shocase.png'),
+          child: new SvgPicture.asset('assets/images/SHOCASE.svg'),
         ),
       ),
     );

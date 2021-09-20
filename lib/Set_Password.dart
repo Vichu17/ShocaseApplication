@@ -149,7 +149,7 @@ class _LoginPageState extends State<SetPass> with TickerProviderStateMixin {
     return Expanded(
       child: Center(
         child: new SvgPicture.asset(
-          'assets/images/homelogo.svg',
+          'assets/images/SHOCASE.svg',
         ),
       ),
     );

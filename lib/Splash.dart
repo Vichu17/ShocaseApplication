@@ -45,7 +45,7 @@ class _SplashScreen extends State<Splash> {
             left: 70,
             child: Center(
               child: Container(
-                child: Image.asset('assets/images/shocase.png'),
+                child: SvgPicture.asset('assets/images/SHOCASE.svg'),
                 ),
             ),
             ),
